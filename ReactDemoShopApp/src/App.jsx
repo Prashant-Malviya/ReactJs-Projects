@@ -2,6 +2,7 @@ import Item from './Components/Item'
 import './App.css'
 import ItemDate from './Components/ItemDate'
 import Card from './Components/Card'
+import { useState } from 'react';
 
 function App() {
   const response = [
@@ -23,7 +24,16 @@ function App() {
       itemMonth : "December13",
       itemYear : "20234"
     }
-  ]
+  ];
+
+  // const[itemName,setItemName] = useState("");
+
+  function clickHandler(){
+    // setItemName("Mohan")
+    console.log("button Clicked")
+  }
+
+
 
   return (
     <>
@@ -37,6 +47,7 @@ function App() {
 
       <Item name = {response[2].itemName} />
       <ItemDate day={response[2].itemDate} month={response[2].itemMonth} year={response[2].itemYear} />
+      <button onClick={clickHandler}>Add To Cart</button>
      </Card>
 
     </>
