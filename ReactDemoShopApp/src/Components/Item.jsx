@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./item.css";
 
-function Item(props) {
+function Item({name}) {
   // const name = "Namaste Bharat"
-  const [itemName, setItemName] = useState(props.name);
+  const [itemName, setItemName] = useState(name);
 
   function clickHandler() {
     setItemName("Krishna");
@@ -14,7 +14,7 @@ function Item(props) {
       <h1 className="Bharat" onClick={clickHandler}>
         {itemName}
       </h1>
-      <h1>{props.name}</h1>
+      {/* <h1>{name}</h1> */}
     </div>
   );
 }
