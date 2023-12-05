@@ -20,7 +20,7 @@ function App() {
       try {
         const res = await fetch(apiUrl);
         const output = await res.json();
-        // save data into a varaible
+        // save data into a variable
         // console.log(data)
         setCourses(output.data);
       } catch (error) {
