@@ -35,6 +35,7 @@ function App() {
   function changeHandler(event){
     const {name,value,checked,type} = event.target
     setFormData(prevFormData => {
+      
       return {
         ...prevFormData,
         // [event.target.name] : event.target.value
