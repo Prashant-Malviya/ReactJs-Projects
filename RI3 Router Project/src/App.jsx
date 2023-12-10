@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import { Routes,Route } from 'react-router-dom'
 import Navbar from './Components/Navbar'
@@ -10,7 +10,8 @@ import About from './Components/About'
 import Contact from './Components/Contact'
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn,setIsLoggedIn] = useState(false);
+  
 
   return (
    <div>
@@ -19,7 +20,7 @@ function App() {
    <Routes>
 
       <Route path='/' element={<Home />} />
-      <Route path='/login' element = {<Login setIsLoggedIn = {setIsLoggedIn} />} />
+      <Route path='/login' element = {<Login  setIsLoggedIn = {setIsLoggedIn} />} />
       <Route path='/signup' element = {<SignUp setIsLoggedIn = {setIsLoggedIn} />} />
       <Route path='/dashboard' element = {<Dashboard />} />
       <Route path='/about' element = {<About />} />

@@ -1,15 +1,15 @@
-import React, { lazy } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import toast from 'react-hot-toast';
 
-function Navbar(props) {
+function Navbar({isLoggedIn,setIsLoggedIn}) {
 
-    let isLoggedIn = props.isLoggedIn;
-    let setIsLoggedIn = props.setIsLoggedIn;
+    // let isLoggedIn = props.isLoggedIn;
+    // let setIsLoggedIn = props.setIsLoggedIn;
 
   return (
     <div className='flex justify-evenly'>
-      <Link to = "/"><h1 className='text-4xl font-bold p-5' loading={lazy}>groUp</h1></Link>
+      <Link to = "/"><h1 className='text-4xl font-bold p-5'>groUp</h1></Link>
 
       <nav>
         <ul className='flex gap-3 p-5 m-3'>

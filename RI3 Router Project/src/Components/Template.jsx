@@ -3,7 +3,7 @@ import frame from "../assets/frame.jpg"
 import SignUpForm from "./SignUpForm";
 import LoginForm from "./LoginForm";
 
-function Template({ title, desc1, desc2, image, formtype, setIsLoggedIn }) {
+function Template({ title, desc1, desc2, image, formtype, setIsLoggedIn}) {
   return (
     <div>
       <div>
@@ -14,7 +14,7 @@ function Template({ title, desc1, desc2, image, formtype, setIsLoggedIn }) {
         </p>
 
         {
-            formtype === "signup" ? (<SignUpForm setIsloggedIn={setIsLoggedIn} />) : (<LoginForm setIsloggedIn={setIsLoggedIn} />)
+            formtype === "signup" ? (<SignUpForm setIsLoggedIn={setIsLoggedIn} />) : (<LoginForm setIsLoggedIn={setIsLoggedIn} />)
         }
 
         <div>

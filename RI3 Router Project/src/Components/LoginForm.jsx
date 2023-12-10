@@ -3,7 +3,7 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
-function LoginForm({setIsloggedIn}) {
+function LoginForm({setIsLoggedIn}) {
 
     const navigate = useNavigate();
 
@@ -23,7 +23,7 @@ function LoginForm({setIsloggedIn}) {
 
   function submitHandler(event){
     event.preventDefault();
-    setIsloggedIn(true);
+    setIsLoggedIn(true);
     toast.success("Logged In successfull");
     navigate("/dashboard")
 
