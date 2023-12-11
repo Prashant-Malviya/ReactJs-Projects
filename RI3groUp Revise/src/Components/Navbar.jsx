@@ -8,14 +8,14 @@ function Navbar({isLoggedIn,setIsLoggedIn}) {
 
 
   return (
-    <div className='flex justify-evenly'>
+    <div className='flex justify-between items-center w-11/12 max-w-[1160px] py-4 mx-auto'>
      
      <Link to="/">
-        <h1 className='text-4xl font-bold p-5'>groUp</h1>
+        <h1 className='text-4xl font-bold  text-white'>groUp</h1>
      </Link>
 
      <nav>
-        <ul className='flex gap-3 p-5 m-3'>
+        <ul className='text-gray-100 flex gap-x-6 '>
             <li>
                 <Link to="/">Home</Link>
             </li>
@@ -30,11 +30,11 @@ function Navbar({isLoggedIn,setIsLoggedIn}) {
 
      {/* login - sign up - logOut - Dashboard */}
 
-     <div className='flex ml-5 mr-3 gap-3 p-5 m-3'>
+     <div className='flex ml-5 mr-3 gap-3 p-5 m-3 gap-x-4'>
         {
             !isLoggedIn &&
             <Link to="/login" >
-                <button>
+                <button className='bg-gray-800 text-gray-100 py-[8px] px-[12px] rounded-[8px] border border-gray-700'>
                     Login
                 </button>
             </Link>
@@ -42,15 +42,15 @@ function Navbar({isLoggedIn,setIsLoggedIn}) {
         {
             !isLoggedIn &&
             <Link to="/signup" >
-                <button>
-                    SignUp
+                <button className='bg-gray-800 text-gray-100 py-[8px] px-[12px] rounded-[8px] border border-gray-700'>
+                    Sign up
                 </button>
             </Link>
         }
         {
             isLoggedIn &&
             <Link to="/" >
-                <button onClick={()=>{
+                <button className='bg-gray-800 text-gray-100 py-[8px] px-[12px] rounded-[8px] border border-gray-700' onClick={()=>{
                     setIsLoggedIn(false);
                     toast.success("Logged Out")
                 }}>
@@ -61,7 +61,7 @@ function Navbar({isLoggedIn,setIsLoggedIn}) {
         {
             isLoggedIn &&
             <Link to="/dashboard" >
-                <button>
+                <button className='bg-gray-800 text-gray-100 py-[8px] px-[12px] rounded-[8px] border border-gray-700'>
                     Dashboard
                 </button>
             </Link>
