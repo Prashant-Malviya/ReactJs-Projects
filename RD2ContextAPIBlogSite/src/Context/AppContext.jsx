@@ -1,4 +1,4 @@
-import { createContext, useState }
+import { createContext, useEffect, useState }
 from "react";
 import { baseUrl } from "../baseUrl";
 
@@ -6,19 +6,20 @@ import { baseUrl } from "../baseUrl";
 // step 1 create context
 export const AppContext = createContext();
 
-export default function AppContextProvider({Children}){
+export default function AppContextProvider({children}){
     const [loading,setLoading] = useState(false);
     const [posts,setPosts] = useState([]);
     const [page,setPage] = useState(1);
     const [totalPages,setTotalPages] = useState(null);
 
-    console.log("app context rendering")
+    console.log("Appcontext rendering")
 
     // data filling 
-    async function fetchBlogPosts(pag=1){
+    async function fetchBlogPosts(page){
         setLoading(true);
-        try{
-            let url = `${baseUrl}?page=${page}`
+        let url = `${baseUrl}?page=${page}`
+        console.log("printing the url");
+        try{    
             const result = await fetch(url);
             const data = await result.json();
             console.log(data);
@@ -34,7 +35,7 @@ export default function AppContextProvider({Children}){
         }
         setLoading(false);
     }
-
+// fetchBlogPosts();
     function handlePageChange(page){
         setPage(page);
         fetchBlogPosts(page);
@@ -61,6 +62,6 @@ export default function AppContextProvider({Children}){
     };
     // step2 : provide value to appcontext
     return <AppContext.Provider value={value}>
-                {Children}
+                {children}
            </AppContext.Provider>
 }
