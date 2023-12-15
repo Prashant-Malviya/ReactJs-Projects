@@ -15,9 +15,18 @@ export default function AppContextProvider({children}){
     console.log("Appcontext rendering")
 
     // data filling 
-    async function fetchBlogPosts(page){
+    async function fetchBlogPosts(page,tag=null,category){
         setLoading(true);
-        let url = `${baseUrl}?page=${page}`
+        let url = `${baseUrl}?page=${page}`;
+        if(tag){
+            url += `&tag=${tag}`;
+        }
+        if(category){
+            url += `&category=${category}`;
+        }
+
+
+        // let url = `${baseUrl}?page=${page}`
         console.log("printing the url");
         try{    
             const result = await fetch(url);

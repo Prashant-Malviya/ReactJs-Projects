@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 import { Routes,Route } from 'react-router-dom'
 import Navbar from './Components/Navbar'
@@ -10,6 +10,7 @@ import About from './Components/About'
 import Contact from './Components/Contact'
 
 function App() {
+  
   const [isLoggedIn,setIsLoggedIn] = useState(false);
   
 

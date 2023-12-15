@@ -4,6 +4,7 @@ import Header from './Components/Header'
 import Blogs from './Components/Blogs'
 import Pagination from './Components/Pagination'
 import { AppContext } from './Context/AppContext'
+import { Routes } from 'react-router-dom'
 
 function App() {
   
@@ -17,11 +18,12 @@ function App() {
   console.log("app rendering")
   
   return (
-    <div className='w-full h-full flex flex-col gap-y-1 justify-center items-center'>
-      <Header />
-      <Blogs />
-      <Pagination />
-    </div>
+   <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/blog/:blogId" element={<BlogPage />} />
+      <Route path="/tags/:tag" element={<TagPage />} />
+      <Route path="/categories/:category" element={<CategoryPage />} />
+   </Routes>
   )
 }
 

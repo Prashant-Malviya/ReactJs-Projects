@@ -140,7 +140,7 @@ function App() {
 
          <br /><br />
 
-         <label >Gender: </label>
+         <label>Gender: </label>
          <input 
          type="radio"
          onChange={changeHandler}
