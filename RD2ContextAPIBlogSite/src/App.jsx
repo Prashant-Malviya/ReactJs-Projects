@@ -9,13 +9,14 @@ import Home from './Components/Home'
 import BlogPage from './Components/BlogPage'
 import TagPage from './Components/TagPage'
 import CategoryPage from './Components/CategoryPage'
+// import { useLocation } from 'react-router-dom'
 
 function App() {
   
   const {fetchBlogPosts} = useContext(AppContext);
 
   const [searchParams,setSearchParams] = useSearchParams();
-  const loacation = useLocation();
+  const location = useLocation();
 
   useEffect(()=>{
     const page = searchParams.get("page") ?? 1;
