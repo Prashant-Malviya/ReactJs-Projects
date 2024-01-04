@@ -29,8 +29,8 @@ function Home() {
 
 
   return (
-    <div>
-     { loading ? (<FadeLoader color="#36d7b7" />) :( posts.length > 0 ? 
+    <div className='flex'>
+     { loading ? (<FadeLoader color="#36d7b7" className='flex justify-center items-center m-auto'/>) :( posts.length > 0 ? 
      ( 
     <div className='grid xs:grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-w-6xl p-2 mx-auto space-y-10 space-x-5 min-h-[80vh]'>{
      posts.map((post) =>(

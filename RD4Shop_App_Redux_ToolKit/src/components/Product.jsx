@@ -36,8 +36,7 @@ function Product({post}) {
         <p className='text-green-600 fonst-semibold '>${post.price}</p>
       </div>
       {
-        cart.some((p) => p.id == post.id) ?  <button className='text-gray-100 border-2 border-gray-700 rounded-full font-semibold text-[12px] p-1 px-3 uppercase hover:bg-gray-700 hover:text-white transition duration-300 ease-in' onClick={removeFromCart}>Remove Item</button> : <button className='text-gray-100 border-2 border-gray-700 rounded-full font-semibold text-[12px] p-1 px-3 uppercase hover: bg-gray-700
-      hover:text-white transition duration-300 ease-in'
+        cart.some((p) => p.id == post.id) ?  <button className='border-2 border-gray-700 rounded-full font-semibold text-[12px] p-1 px-3 uppercase bg-red-300 hover:bg-green-400 ' onClick={removeFromCart}>Remove Item</button> : <button className='border-2 border-gray-700 rounded-full font-semibold text-[12px] p-1 px-3 uppercase bg-red-300 hover:bg-green-400'
          onClick={addToCart}>Add To Cart</button>
       }
       </div>
