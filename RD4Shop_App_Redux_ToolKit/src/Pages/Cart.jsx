@@ -13,9 +13,9 @@ function Cart() {
     },[cart])
 
   return (
-    <div>
+    <div className="flex flex-col">
       {cart.length > 0 ? (
-        <div className="flex">
+        <div className="flex flex-row">
             <div className="w-3/5">
                 {
                     cart.map((item,index) =>{
